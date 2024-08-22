@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authentication</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    
+    <!-- Error message display -->
+    {% if error %}
+    <div class="error-message">{{ error }}</div>
+    {% endif %}
+
+    <!-- Login Form -->
+    <form method="POST" action="{{ url_for('authenticate') }}" id="login-form">
+        <h3>Login Here</h3>
+        <label for="phone_number">Phone Number</label>
+        <input type="text" name="phone_number" placeholder="Phone Number" id="phone_number" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Password" id="password" required>
+
+        <button type="submit">Log In</button>
+        <p>Don't have an account? <a href="#" id="show-register">Create an account</a></p>
+    </form>
+
+    <!-- Registration Form -->
+    <form method="POST" action="{{ url_for('register') }}" id="register-form" style="display: none;">
+        <h3>Create an Account</h3>
+        <label for="reg_phone_number">Phone Number</label>
+        <input type="text" name="phone_number" placeholder="Phone Number" id="reg_phone_number" required>
+
+        <label for="reg_password">Password</label>
+        <input type="password" name="password" placeholder="Password" id="reg_password" required>
+
+        <button type="submit">Create Account</button>
+        <p>Already have an account? <a href="#" id="show-login">Log In</a></p>
+    </form>
+
+    <script>
+        // Toggle between login and registration forms
+        document.getElementById('show-register').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'block';
+        });
+
+        document.getElementById('show-login').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

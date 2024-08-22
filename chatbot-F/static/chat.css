@@ -1,0 +1,122 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#navbar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#logout-button {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #f98e1d; /* Orange border */
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#logout-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    border-color: #ff6600; /* Darker orange on hover */
+}
+
+#chat-container {
+    width: 100%;
+    max-width: 600px;
+    height: 80vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.message {
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+}
+
+.message-received {
+    justify-content: flex-start;
+}
+
+.message-sent {
+    justify-content: flex-end;
+}
+
+.message-bubble {
+    max-width: 60%;
+    padding: 12px 20px;
+    border-radius: 20px;
+    position: relative;
+    word-wrap: break-word;
+    font-size: 16px;
+    line-height: 1.4;
+    border: 2px solid #f98e1d; /* Orange border */
+}
+
+.message-received .message-bubble {
+    background-color: #e0e0e0;
+    color: #333;
+    border-top-left-radius: 0;
+}
+
+.message-sent .message-bubble {
+    background-color: #007bff; /* Blue */
+    color: white;
+    border-top-right-radius: 0;
+}
+
+#question-bar {
+    display: flex;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#question-bar input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+#question-bar button {
+    background-color: #007bff; /* Blue */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#question-bar button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#question-bar button i {
+    font-size: 16px;
+}
